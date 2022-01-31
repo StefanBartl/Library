@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Stefan Bartl Free Library</title>
+<meta name="description" content="Free E-Library for your readed books. Use's Browser-Storage. A 'Odin-Project'-Project.">
+<link rel="icon" sizes="16x16" href="./Icons/pb_200x200.ico" />
+<link rel="apple-touch-icon" sizes="24x24" href="./Icons/pb_200x200.png" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Add Book -->
+<div id="addDiv" class="divAdd" title="The book information are stored in your Browser-Storage, not in a database. They are saved in your Browser until you delete it. For more information search for 'Web-Storage' or 'Local-Storage'!">
+    <p>Title:</p>
+        <input class="input" type="text" id="title" placeholder="Title" required> 
+    <p>Author:</p>
+        <input class="input" type="text" id="author" placeholder="Author" required> 
+    <p>Pages:</p>
+        <input class="input" type="number" id="pages" placeholder="000" required> 
+    <p>Book readed?</p>
+        <input class="input" type="checkbox" id="read">
+    <p><br></p>
+    <button id="addBTN" class="addBtn">Add new Book</button>
+</div>
+    <!-- Clear Button -->
+<button id="clearBtn" class="clearBtn">Clear Library</button>
+    <!-- Library -->
+<div id="library"></div>
+<script src="script.js"></script>
+</body>
+</html>

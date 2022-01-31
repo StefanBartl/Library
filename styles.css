@@ -1,0 +1,34 @@
+body {
+    display: flex;
+}
+.divAdd {
+    background-color: blue;
+    color: cornsilk;
+    text-align: center;
+    max-height: 375px;
+}
+.input{
+    text-align: center;
+}
+button {
+    background-color: blueviolet;
+    color: cornsilk;
+    border: 1px solid blueviolet;
+    border-radius: 7px;
+    width: 150px;
+}
+#BookDivs{
+    text-align: center;
+}
+.library {
+   
+}
+.libraryShow {
+    text-align: center;
+    border: 2px solid black;
+    width: 300px;
+}
+
+.remove {
+    display: none;
+}
