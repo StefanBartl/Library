@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div id="header"><h1><span id="h">Web-Library</span><br><br>Store your Books Online</h1>
 <!-- Add Book -->
 <div id="addDiv" class="divAdd" title="The book information are stored in your Browser-Storage, not in a database. They are saved in your Browser until you delete it. For more information search for 'Web-Storage' or 'Local-Storage'!">
     <p>Title:</p>
@@ -21,10 +22,14 @@
     <p>Book readed?</p>
         <input class="input" type="checkbox" id="read">
     <p><br></p>
-    <button id="addBTN" class="addBtn">Add new Book</button>
+
 </div>
-    <!-- Clear Button -->
-<button id="clearBtn" class="clearBtn">Clear Library</button>
+<div>
+    <button id="addBTN" class="addBtn">Add new Book</button>
+    <p>or</p>
+    <button id="clearBtn" class="clearBtn">Clear whole (!) Library</button>
+</div>
+</div>
     <!-- Library -->
 <div id="library"></div>
 <script src="script.js"></script>

@@ -1,12 +1,90 @@
-body {
+@font-face {
+    font-family: 'Fira Code';
+    src: url('./Fonts/Fira_Code_v6.2/woff2/FiraCode-Medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+  }
+body{
+    font-family: "Fira Code", arial, sans-serif;
     display: flex;
+    flex-wrap: wrap;
+    color: white;
+    background-color: #1992d4;;
+   
+}
+#header{
+    display: flex;
+    background-color: #1992d4;
+    width: 100%;
+    text-shadow: 1px 1px 2px black;
+    color: white;
+    text-align: center;
+    border: solid 1px #1992d4;;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+}
+#h{
+    color: wheat;
+}
+h3{
+    text-shadow: 1px 1px 2px black;
 }
 .divAdd {
-    background-color: blue;
     color: cornsilk;
     text-align: center;
-    max-height: 375px;
+    min-width: 20%;
+ 
 }
+#library{
+    background-color: #1992d4;
+    height: 40%, auto, 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    color: #1992d4;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+
+}
+#BookDivs{
+    max-width: 100%;
+    border: solid 10px #1992d4;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+    transition: all 1s ease-in-out;
+}
+#BookDivs:hover{
+    box-shadow: inset 0 0 3em black;
+}
+#footer{
+    width: 100%;
+    min-height: 200px;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-self: center;
+}
+
 .input{
     text-align: center;
 }
@@ -14,21 +92,5 @@ button {
     background-color: blueviolet;
     color: cornsilk;
     border: 1px solid blueviolet;
-    border-radius: 7px;
     width: 150px;
-}
-#BookDivs{
-    text-align: center;
-}
-.library {
-   
-}
-.libraryShow {
-    text-align: center;
-    border: 2px solid black;
-    width: 300px;
-}
-
-.remove {
-    display: none;
 }

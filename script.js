@@ -121,7 +121,5 @@ clearBtn.addEventListener("click", ()=>{
     document.body.appendChild(newlibraryDiv);
     showLibrary();
 });
-
-
 // Inintialize application algorhytmus
 showLibrary();
