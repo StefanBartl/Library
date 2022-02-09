@@ -155,17 +155,21 @@ totalCounterP.innerText = actualNumber;
 document.getElementById("IDunread").innerText = 0;
 document.getElementById("IDread").innerText = 0;
 document.getElementById("IDpagesRead").innerText = 0;
+document.getElementById("IDstarted").innerText = 0;
 // Loop trough localStorage to get the values
 for (let getBookLoop in localStorage){
 let book = JSON.parse(localStorage.getItem(getBookLoop))
 if(book === null)return;
-if(book.read === "" || book.read === "started")continue;
+if(book.read === "")continue;
 if(book.read === "not readed"){
 document.getElementById("IDunread").innerText++
-} else {
+} else if(book.read === "started"){
+document.getElementById("IDstarted").innerText++}
+else if (book.read === "readed"){
 document.getElementById("IDread").innerText++;
 document.getElementById("IDpagesRead").innerText =  parseInt(book.pages) + parseInt(document.getElementById("IDpagesRead").innerText);
-}}}
+}}
+}
 // Inintialize application algorhytmus
 showLibrary();
 updateBooksCounter();
