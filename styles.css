@@ -48,6 +48,46 @@ h3{
     display: flex;    
     margin-top: 2%;
 }
+@media (max-width: 768px) {
+    .ClassMainWrapper{
+        display: flex;
+        flex-wrap:wrap;    
+        margin-top: 2%;
+        justify-content: center;
+        margin-right: 3rem;
+    }
+    #addDivPositioningDiv{
+        min-width: 100%;
+        justify-content: center;
+    }
+    .divAdd{
+        min-width: 100%;
+        border: 0rem;
+    }
+    .input{
+        min-width: 99%;
+        min-height: 2.5rem;
+    }
+    #library{
+        min-width: 100%;
+        justify-content: center;
+
+    }
+    #BookDivs{
+        min-width: 100%;
+        margin: 0rem;
+        border: 0em;
+    }
+    #addBTN{
+        min-width: 90%;
+        min-height: 3rem;
+        margin-top: 2rem;
+    }
+    #clearBtn{
+        min-width: 90%;
+        min-height: 3rem;
+    }
+}
 .divAdd {
     min-width: 20%;
     color: cornsilk;
@@ -153,7 +193,7 @@ width: 75%;
 }
 #addBTN:hover{
     opacity: 1;
-    }
+}
 
 #clearBtn{
     opacity: 0.3;
@@ -163,3 +203,36 @@ width: 75%;
 #clearBtn:hover{
     opacity: 1;
 }
+
+
+Max-Width
+Breakpoints mit max-width beginnen mit dem Layout für den größten Monitor, also beim Design für den Desktop, und überschreiben nach und nach Stile, um die Seiten an immer kleinere Displaygrößen anzupassen.
+
+@media (max-width: 575.98px) { … }// Kleine Endgeräte (Smartphones, kleiner als 768px)
+
+@media (max-width: 767.98px) { … }
+
+// Kleine Endgeräte (Tablets, kleiner als 992px)
+
+@media (max-width: 991.98px) { … }
+
+// Große Endgeräte (Laptops, Bildschirme, kleiner als 1200px)
+
+@media (max-width: 1199.98px) { … }
+
+Min-Width
+Min-width ist intuitiver und besser lesbar.
+
+// Kleine Endgeräte (Smartphones, 576px und größer)@media (min-width: 576px) { … }
+
+// Mittlere Endgeräte (Tablets, 768px und größer)
+
+@media (min-width: 768px) { … }
+
+// Große Endgeräte (Laptops, Bildschirme, 992px und größer)
+
+@media (min-width: 992px) { … }
+
+// Sehr große Endgeräte (Große Bildschirme, iMac, 1200px und größer)
+
+@media (min-width: 1200px) { … }
