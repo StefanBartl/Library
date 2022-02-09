@@ -1,5 +1,8 @@
 :root{
     --main-blue: #1992d4;
+    /* Break words (for mobile use) */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 @font-face {
     font-family: 'Fira Code';
@@ -36,6 +39,11 @@ body{
 h3{
     text-shadow: 1px 1px 2px black;
 }
+#librarian{
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+    color: wheat;
+}
 .ClassMainWrapper{
     display: flex;    
     margin-top: 2%;
@@ -56,7 +64,7 @@ h3{
 }
 #IDreadUnreadDIV{
     display: flex;
-    width: 100%;
+    min-width: 100%;
     justify-content: center;
     align-content: center;
     text-align: center;
@@ -74,22 +82,23 @@ h3{
 }
 #library{
     min-width: 80%;
+    height: 45%;
     display: flex;
     flex-wrap: wrap;
     color: #1992d4;
-    margin-left: 2rem;
+    gap: 1rem;
+    margin-left:3rem;
     justify-content: center;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
     border-bottom-left-radius: 10%;
     border-bottom-right-radius: 10%;
 }
 #BookDivs{
+    width: 25%;
+    height: minmax(40%, auto);
     background-color: white;
     outline: solid 1em var(--main-blue) ;
     box-shadow:  0 0 2em black;
-    margin: 10px;
+    margin: 2rem;
     border-radius: 1%;
     opacity: 0.6;
     text-align: center;
@@ -100,6 +109,23 @@ h3{
 #BookDivs:hover{
     box-shadow: inset 0 0 2em black;
     opacity: 1;
+}
+.booksH3animation{
+    animation: bookTitleAnimation 5s alternate infinite;
+
+}
+@keyframes bookTitleAnimation {
+    from{
+        color: var(--main-blue);
+    }
+    50%{
+        color: white;
+        text-shadow: 1px 1px 10px black;
+
+    }
+    to{
+        color: black;
+    }
 }
 #booksP{
     margin-left: 1rem;
@@ -114,7 +140,7 @@ button {
     background-color: blueviolet;
     color: cornsilk;
     border: 1px solid blueviolet;
-    width: 150px;
+    width: minmax(30%, auto);
     opacity: 0.6;
     margin: 1em;
 }
@@ -123,6 +149,7 @@ button:hover{
 }
 #addBTN{
 opacity: 0.3;
+width: 75%;
 }
 #addBTN:hover{
     opacity: 1;
@@ -130,6 +157,7 @@ opacity: 0.3;
 
 #clearBtn{
     opacity: 0.3;
+    width: 75%;
 }
 
 #clearBtn:hover{

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Free Online - Library</title>
-<meta name="description" content="Free E-Library for your readed books. Use's Browser-Storage. A 'Odin-Project'-Project.">
+<meta name="description" content="Free E-Library for your books. Use's Browser-Storage. A 'Odin-Project'-Project.">
 <link rel="icon" sizes="16x16" href="./Icons/pb_200x200.ico" />
 <link rel="apple-touch-icon" sizes="24x24" href="./Icons/pb_200x200.png" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,10 +13,10 @@
 <div id="IDbgr" class="ClassBGR">
 <div id="header"><h1><span id="h">Web-Library</span><br><br>Store your Books Online</h1></div>
 <div id="IDMainWrapper" class="ClassMainWrapper">
-    <!-- Add Book -->
+    <!-- Add Book Section-->
 <div id="addDivPositioningDiv">
 <div id="addDiv" class="divAdd" title="The book information are stored in your Browser until you delete it by clicking 'Remove Book' or 'Clear whole library'. For more information search for 'Web-Storage' or 'Local-Storage'!">
-    <h3 id="librarian">LIBRARIAN</h3>
+    <h3><a href="https://stefanbartl.github.io/StefanBartl_Portfolio/" target="_blank" id="librarian" title="Go to the portfolio website of the developer of this online library! You will find further projects or a contact possibility there.">LIBRARIAN</a></h3>
     <p>Title:</p>
         <input class="input" type="text" id="title" placeholder="Title" required> 
     <p>Author:</p>
@@ -24,18 +24,22 @@
     <p>Pages:</p>
         <input class="input" type="number" id="pages" placeholder="000" min="0" required> 
     <p>Book readed?</p>
-        <input class="input" type="checkbox" id="read">
+        <select class="input" type="checkbox" id="read">
+            <option value="Yes" selected>Yes</option>
+            <option value="Started">Started</option>
+            <option value="No">No</option>
+        </select>
+    <button id="addBTN" class="addBtn">Add new Book</button>
     <p><br></p>
 <div>
-    <button id="addBTN" class="addBtn">Add new Book</button>
-    <p>or</p>
-    <button id="clearBtn" class="clearBtn">Clear whole (!) Library</button></div>
     <p id="countP">Books in Library: </p><p id="IDtotalBooks">0</p>
-    <p>Books read/unread: </p><div id="IDreadUnreadDIV"><p id="IDread">0</p> / <p id="IDunread">0</p></div>
+    <p>readed / unread:</p>
+    <p><span id="IDread">0</span> / <span id="IDunread">0</span></p>
     <p id="IDpages">Total Pages read: </p><p id="IDpagesRead">0</p>
+    <button id="clearBtn" class="clearBtn">Clear whole Library</button></div>
 </div>
 </div>    
-    <!-- Library -->
+    <!-- Library Section-->
     <div id="library"></div>
 </div>
 </div> 
