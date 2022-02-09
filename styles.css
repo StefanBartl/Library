@@ -132,7 +132,6 @@ h3{
 
 .booksH3animation{
     animation: bookTitleAnimation 5s alternate infinite;
-
 }
 
 @keyframes bookTitleAnimation {
@@ -195,6 +194,10 @@ width: 75%;
 
 
 @media (max-width: 768px) {
+    .ClassBGR{
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+    }
     #header{
         margin-top: 2rem;
     }
@@ -218,6 +221,7 @@ width: 75%;
     .input{
         min-width: 90%;
         min-height: 2.5rem;
+        text-align: center;
     }
     #library{
         min-width: 95%;
@@ -226,19 +230,27 @@ width: 75%;
     }
     #BookDivs{
         min-width: 95%;
+        max-height: 40%;
         margin: 0rem;
         border: 0em;
         margin-top: 2rem;
         margin-bottom: 2rem;
     }
+    button{
+        min-width: 40%;
+        min-height: 3rem;
+    }
     #addBTN{
         min-width: 90%;
         min-height: 3rem;
-        margin-top: 2rem;
+        margin-top: 1rem;
     }
     #clearBtn{
         min-width: 90%;
         min-height: 3rem;
+    }
+    .booksH3animation{
+        animation: none;
     }
 }
 
