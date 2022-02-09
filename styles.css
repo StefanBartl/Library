@@ -1,21 +1,43 @@
-@font-face {
-    font-family: 'Fira Code';
-    src: url('./Fonts/Fira_Code_v6.2/woff2/FiraCode-Medium.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-  }
+/*                       Table of content:
+                            1) General
+                            2) Fonts 
+                            3) Layout 
+                            4) Typographie 
+                            5) Buttons, Inputs, etc... 
+                            6) Animations 
+                            7) Media Queries                            */
+
+                    /* General */
 
 :root{
-    --main-blue: #1992d4;
-    /* Break words (for mobile use) */
+    --main-blue: hsl(201, 79%, 46%);
+    --main-white: hsl(0, 0%, 100%);
+    --main-black: hsl(0, 0%, 0%);
+    --cornsilk: hsl(48, 100%, 93%);
+    --top-header: hsl(39, 77%, 83%);
+    --buttons-background: hsl(271, 76%, 53%);
+    
+    /* This break words (especially for mobile use usefull) */
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
 
 body{
     font-family: "Fira Code", arial, sans-serif;
-    color: hsl(0, 0%, 100%);
+    color: var(--main-white);
 }
+
+                    /* Fonts */
+
+
+@font-face {
+    font-family: 'Fira Code';
+    src: url('./Fonts/Fira_Code_v6.2/woff2/FiraCode-Medium.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+                    /* Layout */
 
 .ClassBGR{
     min-height: 99%;
@@ -30,29 +52,12 @@ body{
     display: flex;
     background-color: var(--main-blue);
     min-height: 20%;
-    text-shadow: 1px 1px 2px black;
-    color: white;
+    text-shadow: 1px 1px 2px var(--main-black);
+    color: var(--main-white);
     text-align: center;
-    border-bottom: solid 3px white;
+    border-bottom: solid 3px var(--main-white);
     justify-content: center;
     align-content: center;
-}
-
-#h{
-    color: wheat;
-}
-
-h3{
-    text-shadow: 1px 1px 2px black;
-}
-
-#librarian{
-    text-decoration: none;
-    text-shadow: 1px 1px 2px black;
-    color: wheat;
-}
-#libHead{
-    padding-top: .5rem;
 }
 
 .ClassMainWrapper{
@@ -62,18 +67,18 @@ h3{
 
 .divAdd {
     min-width: 20%;
-    color: cornsilk;
+    color: var(--cornsilk);
     text-align: center;
     justify-content: center;
     align-content: center;
     text-align: center;
-    outline: solid .2rem white;
-    box-shadow:  1em 1rem 1rem black;
+    outline: solid .2rem var(--main-white);
+    box-shadow:  1em 1rem 1rem var(--main-black);
     margin-left: 4rem;
 }
 
 #countP{
-    border-top: solid 1.5px white;
+    border-top: solid 1.5px var(--main-white);
     padding-top: 3rem;
 }
 
@@ -102,7 +107,7 @@ h3{
     height: 45%;
     display: flex;
     flex-wrap: wrap;
-    color: #1992d4;
+    color: var(--main-blue);
     gap: 1rem;
     margin-left:3rem;
     justify-content: center;
@@ -113,9 +118,9 @@ h3{
 #BookDivs{
     width: 25%;
     height: minmax(40%, auto);
-    background-color: white;
+    background-color: var(--main-white);
     outline: solid 1em var(--main-blue) ;
-    box-shadow:  0 0 2em black;
+    box-shadow:  0 0 2em var(--main-black);
     margin: 2rem;
     border-radius: 1%;
     opacity: 0.6;
@@ -126,43 +131,47 @@ h3{
 }
 
 #BookDivs:hover{
-    box-shadow: inset 0 0 2em black;
+    box-shadow: inset 0 0 2em var(--main-black);
     opacity: 1;
 }
 
-.booksH3animation{
-    animation: bookTitleAnimation 5s alternate infinite;
+                    /* Typographie */
+
+#h{
+    color: var(--top-header);
 }
 
-@keyframes bookTitleAnimation {
-    from{
-        color: var(--main-blue);
-    }
-    50%{
-        color: white;
-        text-shadow: 1px 1px 10px black;
+h3{
+    text-shadow: 1px 1px 2px var(--main-black);
+}
 
-    }
-    to{
-        color: black;
-    }
+#librarian{
+    text-decoration: none;
+    text-shadow: 1px 1px 2px var(--main-black);
+    color: var(--top-header);
+}
+#libHead{
+    padding-top: .5rem;
 }
 
 #booksP{
     margin-left: 1rem;
     margin-right: 1rem;
-    color: black;
+    color: var(--main-black);
 }
+
+                    /* Buttons, Inputs, etc... */
+
 
 .input{
     text-align: center;
-    border: white;
+    border: var(--main-white);
 }
 
 button {
-    background-color: blueviolet;
-    color: cornsilk;
-    border: 1px solid blueviolet;
+    background-color: var(--buttons-background);
+    color: var(--cornsilk);
+    border: 1px solid var(--buttons-background);
     width: minmax(30%, auto);
     opacity: 0.6;
     margin: 1em;
@@ -173,118 +182,123 @@ button:hover{
 }
 
 #addBTN{
-opacity: 0.3;
-width: 75%;
+    opacity: 0.3;
+    width: 75%;
 }
 
 #addBTN:hover{
     opacity: 1;
 }
 
-
 #clearBtn{
     opacity: 0.3;
     width: 75%;
 }
 
-
 #clearBtn:hover{
     opacity: 1;
 }
 
+                    /* Animations */
 
-@media (max-width: 768px) {
-    .ClassBGR{
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
+                   
+.booksH3animation{
+    animation: bookTitleAnimation 5s alternate infinite;
+}
+
+@keyframes bookTitleAnimation {
+    from{
+        color: var(--main-blue);
     }
-    #header{
-        margin-top: 2rem;
+    50%{
+        color: var(--main-white);
+        text-shadow: 1px 1px 10px var(--main-black);
+
     }
-    .ClassMainWrapper{
-        display: flex;
-        flex-wrap:wrap;    
-        margin-top: 4%;
-        justify-content: center;
-        margin-right: 1rem;
-        margin-left: 1rem;
-    }
-    #addDivPositioningDiv{
-        min-width: 95%;
-        justify-content: center;
-    }
-    .divAdd{
-        min-width: 95%;
-        border: 0rem;
-        margin-left: 0rem;
-    }
-    .input{
-        min-width: 90%;
-        min-height: 2.5rem;
-        text-align: center;
-    }
-    #library{
-        min-width: 95%;
-        justify-content: center;
-        margin-left: 0rem;
-    }
-    #BookDivs{
-        min-width: 95%;
-        max-height: 40%;
-        margin: 0rem;
-        border: 0em;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
-    button{
-        min-width: 40%;
-        min-height: 3rem;
-    }
-    #addBTN{
-        min-width: 90%;
-        min-height: 3rem;
-        margin-top: 1rem;
-    }
-    #clearBtn{
-        min-width: 90%;
-        min-height: 3rem;
-    }
-    .booksH3animation{
-        animation: none;
+    to{
+        color: var(--main-black);
     }
 }
 
+                    /* Media Queries*/
 
+/* Mobile phones and tablets */
+@media (max-width: 768px) {
 
+.ClassBGR{
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
 
-Max-Width
-Breakpoints mit max-width beginnen mit dem Layout für den größten Monitor, also beim Design für den Desktop, und überschreiben nach und nach Stile, um die Seiten an immer kleinere Displaygrößen anzupassen.
+#header{
+    margin-top: 2rem;
+}
 
-@media (max-width: 575.98px) { … }// Kleine Endgeräte (Smartphones, kleiner als 768px)
+.ClassMainWrapper{
+    display: flex;
+    flex-wrap:wrap;    
+    margin-top: 4%;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
 
-@media (max-width: 767.98px) { … }
+#addDivPositioningDiv{
+    min-width: 95%;
+    justify-content: center;
+}
 
-// Kleine Endgeräte (Tablets, kleiner als 992px)
+.divAdd{
+    min-width: 95%;
+    border: 0rem;
+    margin-left: 0rem;
+}
 
-@media (max-width: 991.98px) { … }
+.input{
+    min-width: 90%;
+    min-height: 2.5rem;
+    text-align: center;
+}
 
-// Große Endgeräte (Laptops, Bildschirme, kleiner als 1200px)
+#read{
+    text-align-last: center;
+}
 
-@media (max-width: 1199.98px) { … }
+#library{
+    min-width: 95%;
+    justify-content: center;
+    margin-left: 0rem;
+}
 
-Min-Width
-Min-width ist intuitiver und besser lesbar.
+#BookDivs{
+    min-width: 95%;
+    max-height: 40%;
+    margin: 0rem;
+    border: 0em;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
-// Kleine Endgeräte (Smartphones, 576px und größer)@media (min-width: 576px) { … }
+button{
+    min-width: 40%;
+    min-height: 3rem;
+}
 
-// Mittlere Endgeräte (Tablets, 768px und größer)
+#addBTN{
+    min-width: 90%;
+    min-height: 3rem;
+    margin-top: 1rem;
+}
 
-@media (min-width: 768px) { … }
+#clearBtn{
+    min-width: 90%;
+    min-height: 3rem;
+}
 
-// Große Endgeräte (Laptops, Bildschirme, 992px und größer)
+.booksH3animation{
+    animation: none;
+}
 
-@media (min-width: 992px) { … }
+} /* Media Querie end */ 
 
-// Sehr große Endgeräte (Große Bildschirme, iMac, 1200px und größer)
-
-@media (min-width: 1200px) { … }
+                        /* CSS-Stylesheet End */
