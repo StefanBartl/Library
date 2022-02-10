@@ -1,23 +1,29 @@
-/*                       Table of content:
-                            1) General
-                            2) Fonts 
-                            3) Layout 
-                            4) Typographie 
-                            5) Buttons, Inputs, etc... 
-                            6) Animations 
-                            7) Media Queries                            */
+/*####################################################################################################################################################################*\
+#                                                                                                                                                                      #
+#                                                                        Table of content:                                                                             #
+#                                                                                                                                                                      #
+#                                                                            1) General                                                                                #
+#                                                                            2) Fonts                                                                                  #
+#                                                                            3) Layout                                                                                 #
+#                                                                            4) Typographie                                                                            #
+#                                                                            5) Buttons, Inputs, etc...                                                                #
+#                                                                            6) Animations                                                                             #
+#                                                                            7) Media Queries                                                                          #
+#                                                                                                                                                                      #
+\*####################################################################################################################################################################*/
 
-                    /* General */
+                                                                             /* General */
 
 :root{
+         /* Colour-Palette */
     --main-blue: hsl(201, 79%, 46%);
     --main-white: hsl(0, 0%, 100%);
     --main-black: hsl(0, 0%, 0%);
     --cornsilk: hsl(48, 100%, 93%);
     --top-header: hsl(39, 77%, 83%);
-    --buttons-background: hsl(271, 76%, 53%);
-    
-    /* This break words (especially for mobile use usefull) */
+    --buttons-background: hsl(271, 76%, 53%);  
+
+/* This break words, especially usefull for mobile use  */
     overflow-wrap: break-word;
     word-wrap: break-word;
 }
@@ -27,7 +33,7 @@ body{
     color: var(--main-white);
 }
 
-                    /* Fonts */
+                                                                              /* Fonts */
 
 
 @font-face {
@@ -37,9 +43,9 @@ body{
     font-style: normal;
 }
 
-                    /* Layout */
+                                                                              /* Layout */
 
-.ClassBGR{
+.Class_PageWrapper{
     min-height: 99%;
     width: 98%;
     position: absolute;
@@ -48,7 +54,7 @@ body{
     z-index: -1;
 }
 
-#header{
+#ID_HeaderDiv{
     display: flex;
     background-color: var(--main-blue);
     min-height: 20%;
@@ -60,12 +66,12 @@ body{
     align-content: center;
 }
 
-.ClassMainWrapper{
+.Class_MainWrapper{
     display: flex;    
     margin-top: 2%;
 }
 
-.divAdd {
+.Class_DivAdd {
     min-width: 20%;
     color: var(--cornsilk);
     text-align: center;
@@ -77,32 +83,7 @@ body{
     margin-left: 4rem;
 }
 
-#countP{
-    border-top: solid 1.5px var(--main-white);
-    padding-top: 3rem;
-}
-
-#IDreadUnreadDIV{
-    display: flex;
-    min-width: 100%;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-}
-
-#IDpagesRead{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    justify-items: center;
-    align-items: center;
-}
-
-#library{
+#ID_Library{
     min-width: 80%;
     height: 45%;
     display: flex;
@@ -115,7 +96,7 @@ body{
     border-bottom-right-radius: 10%;
 }
 
-#BookDivs{
+#ID_BookDivs{
     width: 25%;
     height: minmax(40%, auto);
     background-color: var(--main-white);
@@ -130,43 +111,59 @@ body{
     transition: all 1s ease-in-out;
 }
 
-#BookDivs:hover{
+#ID_BookDivs:hover{
     box-shadow: inset 0 0 2em var(--main-black);
     opacity: 1;
 }
 
-                    /* Typographie */
 
-#h{
-    color: var(--top-header);
+#ID_BooksInfoWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    height: 30%;
+    justify-content: center;
 }
+
+#ID_BooksCounterP{
+    border-top: solid 1.5px var(--main-white);
+    padding-top: 3rem;
+}
+
+#ID_PagesRead{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    justify-items: center;
+    align-items: center;
+}
+
+
+                                                                              /* Typographie */
 
 h3{
     text-shadow: 1px 1px 2px var(--main-black);
+    padding-top: .5rem;
 }
 
-#librarian{
+.Class_Headlines{
     text-decoration: none;
     text-shadow: 1px 1px 2px var(--main-black);
     color: var(--top-header);
 }
-#libHead{
-    padding-top: .5rem;
-}
 
-#booksP{
+#ID_BooksP{
+    margin-top: 2rem;
     margin-left: 1rem;
     margin-right: 1rem;
     color: var(--main-black);
+    width: 100%;
+    min-height: 15rem;
+  
 }
 
-                    /* Buttons, Inputs, etc... */
-
-
-.input{
-    text-align: center;
-    border: var(--main-white);
-}
+                                                                          /* Buttons, Inputs, etc... */
 
 button {
     background-color: var(--buttons-background);
@@ -180,29 +177,59 @@ button {
 button:hover{
     opacity: 1;
 }
+.Class_LibrarianButton{
+    background-color: var(--buttons-background);
+    color: var(--cornsilk);
+    border: 1px solid var(--buttons-background);
+    width: minmax(30%, auto);
+    opacity: 0.6;
+    margin: 1em;
+}
+.class_LibrarianButton:hover{
+    opacity: 1;
+}
 
-#addBTN{
+.Class_BookButtons{
+    width: 7rem;
+    height:  2rem;
+    border-radius: 1rem;
+}
+
+
+#ID_AddButton{
+    opacity: 0.3;
+    width: 75%;
+    margin-top: 2rem;
+}
+
+#ID_AddButton:hover{
+    opacity: 1;
+}
+
+#ID_ClearButton{
     opacity: 0.3;
     width: 75%;
 }
 
-#addBTN:hover{
+#ID_ClearButton:hover{
     opacity: 1;
 }
 
-#clearBtn{
-    opacity: 0.3;
+.Class_Input{
+    text-align: center;
+    border: var(--main-white);
     width: 75%;
 }
 
-#clearBtn:hover{
-    opacity: 1;
+#ID_Read{
+    text-align: center;
+    text-align-last: center;
 }
 
-                    /* Animations */
+                                                                              /* Animations */
 
                    
-.booksH3animation{
+.Class_BooksH3animation{
     animation: bookTitleAnimation 5s alternate infinite;
 }
 
@@ -220,21 +247,22 @@ button:hover{
     }
 }
 
-                    /* Media Queries*/
+                                                                              /* Media Queries*/
 
-/* Mobile phones and tablets */
+/* Mobile phones and tablet-portrait mode */
+
 @media (max-width: 768px) {
 
-.ClassBGR{
+.Class_PageWrapper{
     border-bottom-left-radius: 2rem;
     border-bottom-right-radius: 2rem;
 }
 
-#header{
+#ID_HeaderDiv{
     margin-top: 2rem;
 }
 
-.ClassMainWrapper{
+.Class_MainWrapper{
     display: flex;
     flex-wrap:wrap;    
     margin-top: 4%;
@@ -243,34 +271,31 @@ button:hover{
     margin-left: 1rem;
 }
 
-#addDivPositioningDiv{
+#ID_AddPositioningDiv{
     min-width: 95%;
     justify-content: center;
 }
 
-.divAdd{
+.Class_DivAdd{
     min-width: 95%;
     border: 0rem;
     margin-left: 0rem;
+    margin-bottom: 2rem;
 }
 
-.input{
+.Class_Input{
     min-width: 90%;
     min-height: 2.5rem;
     text-align: center;
 }
 
-#read{
-    text-align-last: center;
-}
-
-#library{
+#ID_Library{
     min-width: 95%;
     justify-content: center;
     margin-left: 0rem;
 }
 
-#BookDivs{
+#ID_BookDivs{
     min-width: 95%;
     max-height: 40%;
     margin: 0rem;
@@ -284,21 +309,36 @@ button{
     min-height: 3rem;
 }
 
-#addBTN{
+#ID_AddButton{
     min-width: 90%;
     min-height: 3rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
 }
 
-#clearBtn{
+#ID_ClearButton{
     min-width: 90%;
     min-height: 3rem;
 }
 
-.booksH3animation{
+.Class_BooksH3animation{
     animation: none;
 }
 
-} /* Media Querie end */ 
+}
 
-                        /* CSS-Stylesheet End */
+/*####################################################################################################################################################################*\
+#                                                                                                                                                                      #
+#                                                                             Credits:                                                                                 #
+#                                                                                                                                                                      #
+#                                                        Special thanks to the "Odin Project"-Team who did a great job.                                                #
+#                                                    Greetings to the many, many programmers who take the time to write blogs,                                         #
+#                                      Of course also big thanks to all photographers and graphic designers who make their works available.                            #
+#                                                                                                                                                                      #
+#                                                                    CSS - what a wonderful language.                                                                  #
+#                                                                                                                                                                      #
+#                                                                                                                                                                      #
+\*####################################################################################################################################################################*/
+
+
+
+

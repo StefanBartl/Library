@@ -8,17 +8,18 @@ this.read = read;
 Book.prototype.info = function(){
 return this.title + " by " + this.author +", " + this.pages + " pages, " + this.read + " yet";
 }
-const mainWrapperDIV = document.getElementById("IDMainWrapper");
+const mainWrapperDIV = document.getElementById("ID_MainWrapper");
 // Add new books function
-const addBooksButton = document.getElementById("addBTN");
+const addBooksButton = document.getElementById("ID_AddButton");
 addBooksButton.addEventListener("click", addBooks);
 function addBooks (){
 let saveNumber = localStorage.length +1;
 // Take Input, create obj and push it to library
-const title = document.getElementById('title').value;
-const author = document.getElementById('author').value;
-const pages = document.getElementById('pages').value;
-const read = document.getElementById('read').value;
+let title, author, pages, read;
+if(document.getElementById('ID_Title').value != "") title = document.getElementById('ID_Title').value; else return;
+if(document.getElementById('ID_Author').value != "") author = document.getElementById('ID_Author').value; else return;
+if(document.getElementById('ID_Pages').value != 0) pages = document.getElementById('ID_Pages').value; else return;
+if(document.getElementById('ID_Read').value != "") read = document.getElementById('ID_Read').value; else return;
 // Check for readed or not
 let readed;
 if (read === "Yes"){
@@ -31,17 +32,17 @@ const NewBook = new Book(title, author, pages, readed);
 if(localStorage.getItem(`Book${saveNumber}`)){saveNumber++};
 localStorage.setItem(`Book${saveNumber}`, JSON.stringify(NewBook));
 // Delete old screen and show up-to-date library
-const libraryDiv = document.querySelector('#library');
+const libraryDiv = document.querySelector('#ID_Library');
 libraryDiv.remove()
 const newlibraryDiv = document.createElement("div");
-newlibraryDiv.setAttribute("id", "library");
+newlibraryDiv.setAttribute("id", "ID_Library");
 mainWrapperDIV.appendChild(newlibraryDiv);
 showLibrary();
 updateBooksCounter();
 }
 // Main function which shows the library
 function showLibrary (){
-const libraryDiv = document.querySelector('#library');
+const libraryDiv = document.querySelector('#ID_Library');
 // Loop trough localStorage to get the values
 for (let getBookLoop in localStorage){
 let book = JSON.parse(localStorage.getItem(getBookLoop))
@@ -55,20 +56,21 @@ if(book.read === "started"){finish = "The librarian says getting things done doe
 if(book.read === "readed"){finish = "The librarian hopes you enjoyed reading this book."};
 // Create new elements and pt the text in
 const NewDivBook = document.createElement("div");
-NewDivBook.setAttribute("id", "BookDivs");
+NewDivBook.setAttribute("id", "ID_BookDivs");
 let Titel = document.createElement("h3");
-Titel.setAttribute("id", "booksH3");
+Titel.setAttribute("id", "ID_BooksH3");
 let Text = document.createElement("p");
-Text.setAttribute("id", "booksP");
+Text.setAttribute("id", "ID_BooksP");
 // Animation effect for the titel of the book when hovering over the book div
-NewDivBook.addEventListener("mouseover", ()=>{Titel.classList.add("booksH3animation");})
-NewDivBook.addEventListener("mouseleave", ()=>{Titel.classList.remove("booksH3animation");})
+NewDivBook.addEventListener("mouseover", ()=>{Titel.classList.add("Class_BooksH3Animation");})
+NewDivBook.addEventListener("mouseleave", ()=>{Titel.classList.remove("Class_BooksH3Animation");})
 // If title is not empty (as by the removed ones), go ahead. Else go get next book.
 if(title != ""){ Titel.innerHTML = title} else continue;
 // Put text for user information together
 Text.innerHTML = `This book was written by <br> ${author}.<br>${title} has ${pages} Pages and you've<br><br>${book.read} it.<br><br>${finish}`;
 // Create toggle read button, get text content on read-state together, assign event listener
 const toggleReadBtn = document.createElement("button");
+toggleReadBtn.classList.add("Class_BookButtons");
 let actualBook = JSON.parse(localStorage.getItem(getBookLoop));
 let readStatus = actualBook.read;
 if(readStatus === "readed"){btnStatus = "Don't readed it?"}else if (readStatus === "not readed") {btnStatus = "Have you started it?"} else if (readStatus === "started"){btnStatus = "Finished it?"};
@@ -86,16 +88,17 @@ toggleReadBtn.innerText = btnNewText;
 const NewBook = new Book(title, author, pages, pushNewReadStatus);
 localStorage.removeItem(getBookLoop);
 localStorage.setItem(getBookLoop, JSON.stringify(NewBook));
-const libraryDiv = document.querySelector('#library');
+const libraryDiv = document.querySelector('#ID_Library');
 libraryDiv.remove()
 const newlibraryDiv = document.createElement("div");
-newlibraryDiv.setAttribute("id", "library");
+newlibraryDiv.setAttribute("id", "ID_Library");
 mainWrapperDIV.appendChild(newlibraryDiv);
 showLibrary();
 updateBooksCounter();
 }
 // Create remove button, assign event listener
 const removeBtn = document.createElement("button");
+removeBtn.classList.add("Class_BookButtons");
 removeBtn.innerText = "Remove Book";
 removeBtn.addEventListener("click", ()=>{
 let rem = JSON.parse(localStorage.getItem(getBookLoop));
@@ -109,9 +112,9 @@ NewDivBook.remove();
 updateBooksCounter();
 });
 // Push it to DOM
-const libraryDiv = document.getElementById("library");
+const libraryDiv = document.getElementById("ID_Library");
 const booksInfoWrapper = document.createElement("div");
-booksInfoWrapper.setAttribute("id", "booksInfoWrapper");
+booksInfoWrapper.setAttribute("id", "ID_BooksInfoWrapper");
 libraryDiv.appendChild(NewDivBook);
 NewDivBook.appendChild(Titel);
 NewDivBook.appendChild(booksInfoWrapper);
@@ -123,7 +126,7 @@ booksInfoWrapper.appendChild(removeBtn);
 updateBooksCounter();
 }
 // Clear library
-const clearBtn = document.getElementById("clearBtn");
+const clearBtn = document.getElementById("ID_ClearButton");
 clearBtn.addEventListener("click", ()=>{
 let confirmBox = confirm(`The librarian asks if you really want to delete the library? 
 It removes all book informations from your Browsers storage. 
@@ -132,10 +135,10 @@ This cannot be undone!
 Click "confirm" to delete or "cancel" to go back to the library.`)
 if(confirmBox === true){
 localStorage.clear();
-const libraryDiv = document.querySelector('#library');
+const libraryDiv = document.querySelector('#ID_Library');
 libraryDiv.remove()
 const newlibraryDiv = document.createElement("div");
-newlibraryDiv.setAttribute("id", "library");
+newlibraryDiv.setAttribute("id", "ID_Library");
 mainWrapperDIV.appendChild(newlibraryDiv);
 showLibrary();
 updateBooksCounter();
@@ -148,26 +151,26 @@ If you would like to give feedback, you can find the contact by clicking on the 
 // Function to show actual Books in library
 function updateBooksCounter(){
 // Total books
-const totalCounterP = document.getElementById("IDtotalBooks");
-let actualNumber = document.getElementById("library").children.length;
+const totalCounterP = document.getElementById("ID_TotalBooks");
+let actualNumber = document.getElementById("ID_Library").children.length;
 totalCounterP.innerText = actualNumber;
 //Books & Pages Read/Unread
-document.getElementById("IDunread").innerText = 0;
-document.getElementById("IDread").innerText = 0;
-document.getElementById("IDpagesRead").innerText = 0;
-document.getElementById("IDstarted").innerText = 0;
+document.getElementById("ID_Unread").innerText = 0;
+document.getElementById("ID_Readed").innerText = 0;
+document.getElementById("ID_PagesRead").innerText = 0;
+document.getElementById("ID_Started").innerText = 0;
 // Loop trough localStorage to get the values
 for (let getBookLoop in localStorage){
 let book = JSON.parse(localStorage.getItem(getBookLoop))
 if(book === null)return;
 if(book.read === "")continue;
 if(book.read === "not readed"){
-document.getElementById("IDunread").innerText++
+document.getElementById("ID_Unread").innerText++
 } else if(book.read === "started"){
-document.getElementById("IDstarted").innerText++}
+document.getElementById("ID_Started").innerText++}
 else if (book.read === "readed"){
-document.getElementById("IDread").innerText++;
-document.getElementById("IDpagesRead").innerText =  parseInt(book.pages) + parseInt(document.getElementById("IDpagesRead").innerText);
+document.getElementById("ID_Readed").innerText++;
+document.getElementById("ID_PagesRead").innerText =  parseInt(book.pages) + parseInt(document.getElementById("ID_PagesRead").innerText);
 }}
 }
 // Inintialize application algorhytmus

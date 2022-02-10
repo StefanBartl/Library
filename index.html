@@ -10,37 +10,38 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="IDbgr" class="ClassBGR">
-<div id="header"><h1><span id="h">Web-Library</span><br><br>Store your Books Online</h1></div>
-<div id="IDMainWrapper" class="ClassMainWrapper">
-    <!-- Add Book Section-->
-<div id="addDivPositioningDiv">
-<div id="addDiv" class="divAdd" title="The book information are stored in your Browser until you delete it by clicking 'Remove Book' or 'Clear whole library'. For more information search for 'Web-Storage' or 'Local-Storage'!">
-    <h3 id="libHead"><a href="https://stefanbartl.github.io/StefanBartl_Portfolio/" target="_blank" id="librarian" title="Go to the portfolio website of the developer of this online library! You will find further projects or a contact possibility there.">LIBRARIAN</a></h3>
-    <p>Title:</p>
-        <input class="input" type="text" id="title" placeholder="Title" required> 
-    <p>Author:</p>
-        <input class="input" type="text" id="author" placeholder="Author"  required> 
-    <p>Pages:</p>
-        <input class="input" type="number" id="pages" placeholder="000" min="0" required> 
-    <p>Book readed?</p>
-        <select class="input" type="checkbox" id="read">
-            <option value="Yes" selected>Yes</option>
-            <option value="Started">Started</option>
-            <option value="No">No</option>
-        </select>
-    <button id="addBTN" class="addBtn">Add new Book</button>
-    <p><br></p>
+<div class="Class_PageWrapper">
+<div id="ID_HeaderDiv"><h1><span class="Class_Headlines">Web-Library</span><br><br>Store your Books Online</h1></div>
+<div id="ID_MainWrapper" class="Class_MainWrapper">
+                                                            <!-- Add Book Section-->
+<div id="ID_AddPositioningDiv">
+<div id="ID_AddDiv" class="Class_DivAdd" title="The book information are stored in your Browser until you delete it by clicking 'Remove Book' or 'Clear whole library'. For more information search for 'Web-Storage' or 'Local-Storage'!">
+    <h3><a class="Class_Headlines" href="https://stefanbartl.github.io/StefanBartl_Portfolio/" target="_blank" class="headlineClass" title="Go to the portfolio website of the developer of this online library! You will find further projects or a contact possibility there.">LIBRARIAN</a></h3>
+   <form>
+        <p>Title:</p>
+            <input class="Class_Input" type="text" id="ID_Title" placeholder="Title" required> 
+        <p>Author:</p>
+            <input class="Class_Input" type="text" id="ID_Author" placeholder="Author"  required> 
+        <p>Pages:</p>
+            <input class="Class_Input" type="number" id="ID_Pages" placeholder="000" min="0" required> 
+        <p>Book readed?</p>
+            <select class="Class_Input" id="ID_Read"type="checkbox" required>
+                <option value="Yes" selected>Yes</option>
+                <option value="Started">Started</option>
+                <option value="No">No</option>
+            </select>
+        <input type="submit" id="ID_AddButton" class="Class_LibrarianButton" value="Add new Book">
+    </form>
 <div>
-    <p id="countP">Books in Library</p><p id="IDtotalBooks">0</p>
+    <p id="ID_BooksCounterP">Books in Library</p><p id="ID_TotalBooks">0</p>
     <p>readed/started/unread</p>
-    <p><span id="IDread">0</span> / <span id="IDstarted">0</span> / <span id="IDunread">0</span></p>
-    <p id="IDpages">Total Pages read</p><p id="IDpagesRead">0</p>
-    <button id="clearBtn" class="clearBtn">Clear whole Library</button></div>
+    <p><span id="ID_ReadED">0</span> / <span id="ID_Started">0</span> / <span id="ID_Unread">0</span></p>
+    <p id="ID_Pages">Total Pages read</p><p id="ID_PagesRead">0</p>
+    <button id="ID_ClearButton" class="Class_LibrarianButton">Clear whole Library</button></div>
 </div>
 </div>    
-    <!-- Library Section-->
-    <div id="library"></div>
+                                                            <!-- Library Section-->
+    <div id="ID_Library"></div>
 </div>
 </div> 
 <script src="script.js"></script>
