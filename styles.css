@@ -223,7 +223,7 @@ button:hover{
 
 #ID_Read{
     text-align: center;
-    text-align-last: center;
+    border: var(--main-white);
 }
 
                                                                               /* Animations */
